@@ -1,0 +1,557 @@
+.screen-resume {
+  display: block;
+}
+
+.print-resume {
+  display: none;
+}
+
+@page {
+  size: A4;
+  margin: 8mm 10mm 9mm 10mm;
+}
+
+@media print {
+  :root {
+    --print-navy: #0b2d4f;
+    --print-blue: #1f6fb2;
+    --print-line: #a8cbe4;
+    --print-slate: #445b6b;
+    --print-slate-soft: #708392;
+    --print-bg-soft: #f3f8fc;
+    --print-border: #d8e4ee;
+
+    --print-body-size: 9pt;
+    --print-body-line: 1.25;
+
+    --print-section-gap: 5.4mm;
+    --print-heading-gap: 2.8mm;
+    --print-paragraph-gap: 1.1mm;
+    --print-bullet-gap: 0.8mm;
+    --print-entry-gap: 3.7mm;
+  }
+
+  html,
+  body,
+  #root {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    background: #ffffff !important;
+  }
+
+  body {
+    color: #172b3a;
+    font-family: Inter, Aptos, 'Segoe UI', Arial, sans-serif;
+    font-size: var(--print-body-size);
+    line-height: var(--print-body-line);
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  * {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    max-width: 100%;
+  }
+
+  .screen-resume {
+    display: none !important;
+  }
+
+  .print-resume {
+    display: block !important;
+    width: 190mm;
+    margin: 0 auto;
+    color: #172b3a;
+    font-family: Inter, Aptos, 'Segoe UI', Arial, sans-serif;
+    font-size: 8.2pt;
+    line-height: 1.25;
+  }
+
+  .print-page-break {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  .print-page-break > .print-section:first-child {
+    margin-top: 0;
+  }
+
+  .print-section {
+    margin-top: var(--print-section-gap);
+  }
+
+  .print-section h2 {
+    margin: 0 0 var(--print-heading-gap);
+    padding-bottom: 1.2mm;
+    border-bottom: 0.35mm solid var(--print-line);
+    color: var(--print-navy);
+    font-size: 11pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    line-height: 1.15;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .print-header {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 31mm;
+    gap: 6mm;
+    padding: 7mm 8mm;
+    min-height: 50mm;
+    background: var(--print-navy);
+    border-radius: 2mm;
+  }
+
+  .print-header::before,
+  .print-header::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .print-header::before {
+    width: 58mm;
+    height: 58mm;
+    right: -21mm;
+    top: -20mm;
+    border-radius: 48% 52% 61% 39% / 44% 38% 62% 56%;
+    background: rgba(232, 242, 250, 0.08);
+  }
+
+  .print-header::after {
+    width: 64mm;
+    height: 30mm;
+    left: -14mm;
+    bottom: -14mm;
+    border: 0.25mm solid rgba(232, 242, 250, 0.14);
+    transform: rotate(-8deg);
+  }
+
+  .print-header__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 36mm;
+  }
+
+  .print-header__content h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 20.2pt;
+    font-weight: 800;
+    letter-spacing: 0.35px;
+    line-height: 1.03;
+  }
+
+  .print-header__title {
+    margin: 1.1mm 0 0;
+    color: #ffffff;
+    font-size: 11.6pt;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  .print-header__subtitle {
+    margin: 1mm 0 0;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 7.8pt;
+    line-height: 1.24;
+  }
+
+  .print-header__profile {
+    margin: 1.05mm 0 0;
+    color: rgba(255, 255, 255, 0.94);
+    font-size: 8.2pt;
+    line-height: 1.32;
+  }
+
+  .print-header__contact {
+    margin: auto 0 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 7pt;
+    line-height: 1.17;
+    overflow-wrap: anywhere;
+  }
+
+  .print-header__photo {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    width: 30mm;
+    height: 39mm;
+    border-radius: 2mm;
+    border: 0.3mm solid rgba(255, 255, 255, 0.45);
+    background: var(--print-bg-soft);
+    overflow: hidden;
+  }
+
+  .print-header__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .print-header__placeholder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    padding: 1.8mm;
+    color: #445b6b;
+    background: var(--print-bg-soft);
+  }
+
+  .print-header__placeholder p {
+    margin: 0;
+    font-size: 6.9pt;
+    font-weight: 600;
+    line-height: 1.12;
+  }
+
+  .print-header__placeholder small {
+    margin-top: 0.45mm;
+    font-size: 6.3pt;
+    line-height: 1.12;
+  }
+
+  .print-competencies__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5mm;
+  }
+
+  .print-competency-card {
+    padding: 2.6mm 3mm;
+    border-radius: 2mm;
+    border: 0.25mm solid var(--print-border);
+    background: var(--print-bg-soft);
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-competency-card__head {
+    display: flex;
+    align-items: center;
+    gap: 0.9mm;
+  }
+
+  .print-competency-card__head svg {
+    color: #15548a;
+    flex-shrink: 0;
+  }
+
+  .print-competency-card h3 {
+    margin: 0;
+    color: var(--print-navy);
+    font-size: 8.2pt;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .print-competency-card ul {
+    margin: 1.05mm 0 0;
+    padding-left: 2.8mm;
+  }
+
+  .print-competency-card li {
+    margin: 0;
+    color: var(--print-slate);
+    font-size: 7.1pt;
+    line-height: 1.25;
+  }
+
+  .print-competency-card li + li {
+    margin-top: 0.55mm;
+  }
+
+  .print-experience-list {
+    display: grid;
+    gap: var(--print-entry-gap);
+  }
+
+  .print-experience-entry {
+    display: grid;
+    grid-template-columns: 30mm 1fr;
+    column-gap: 4mm;
+    break-inside: auto;
+    page-break-inside: auto;
+    orphans: 3;
+    widows: 3;
+  }
+
+  .print-experience-entry__period {
+    margin: 0;
+    color: var(--print-blue);
+    font-size: 7.4pt;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .print-experience-entry__body {
+    position: relative;
+    padding-left: 3.1mm;
+  }
+
+  .print-experience-entry__body::before {
+    content: '';
+    position: absolute;
+    left: 0.95mm;
+    top: 1.65mm;
+    bottom: 0.35mm;
+    width: 0.22mm;
+    background: #6fa9d1;
+  }
+
+  .print-experience-entry__body::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.1mm;
+    width: 2.2mm;
+    height: 2.2mm;
+    border-radius: 50%;
+    background: #1f6fb2;
+  }
+
+  .print-experience-entry:last-child .print-experience-entry__body::before {
+    bottom: 2.1mm;
+  }
+
+  .print-experience-entry h3 {
+    margin: 0;
+    color: var(--print-navy);
+    font-size: 8.5pt;
+    font-weight: 750;
+    line-height: 1.24;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .print-experience-entry__company {
+    margin: 0.7mm 0 0;
+    color: var(--print-slate);
+    font-size: 7.5pt;
+    line-height: 1.22;
+    font-weight: 650;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .print-experience-entry__context {
+    margin: 0.95mm 0 0;
+    color: var(--print-slate-soft);
+    font-size: 7.1pt;
+    line-height: 1.22;
+    font-style: italic;
+  }
+
+  .print-experience-entry__highlights {
+    list-style: none;
+    margin: 0.95mm 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5mm;
+  }
+
+  .print-experience-entry__highlights li {
+    margin: 0;
+    background: #e8f2fa;
+    color: #15548a;
+    font-size: 6.9pt;
+    line-height: 1.08;
+    padding: 1mm 1.7mm;
+    border-radius: 1.2mm;
+  }
+
+  .print-experience-entry__details {
+    margin: 1mm 0 0;
+    padding-left: 3.2mm;
+  }
+
+  .print-experience-entry__details li {
+    margin: 0;
+    color: #263b49;
+    font-size: 7.3pt;
+    line-height: 1.3;
+  }
+
+  .print-experience-entry__details li + li {
+    margin-top: var(--print-bullet-gap);
+  }
+
+  .print-experience-entry.is-short {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-education-list {
+    display: grid;
+    gap: 3.8mm;
+  }
+
+  .print-education__container {
+    border: 0.25mm solid var(--print-border);
+    border-radius: 2mm;
+    padding: 3.5mm;
+    background: #ffffff;
+  }
+
+  .print-education-entry {
+    display: grid;
+    grid-template-columns: 30mm 1fr;
+    column-gap: 4mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-education-entry__period {
+    margin: 0;
+    color: var(--print-blue);
+    font-size: 7.35pt;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .print-education-entry__body h3 {
+    margin: 0;
+    color: var(--print-navy);
+    font-size: 8.2pt;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .print-education-entry__body {
+    position: relative;
+    padding-left: 3.1mm;
+  }
+
+  .print-education-entry__body::before {
+    content: '';
+    position: absolute;
+    left: 0.95mm;
+    top: 1.6mm;
+    bottom: 0.2mm;
+    width: 0.22mm;
+    background: #6fa9d1;
+  }
+
+  .print-education-entry__body::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.05mm;
+    width: 2.2mm;
+    height: 2.2mm;
+    border-radius: 50%;
+    background: #1f6fb2;
+  }
+
+  .print-education-entry__institution {
+    margin: 0.85mm 0 0;
+    color: var(--print-slate);
+    font-size: 7.3pt;
+    line-height: 1.22;
+    font-weight: 700;
+  }
+
+  .print-education-entry__strip {
+    margin: 0.85mm 0 0;
+    padding: 1.5mm 2mm;
+    border-radius: 1.5mm;
+    border: 0.25mm solid var(--print-border);
+    background: #f3f8fc;
+    color: #15548a !important;
+    font-size: 7.1pt !important;
+    line-height: 1.25 !important;
+    font-weight: 600;
+  }
+
+  .print-education-entry__body p {
+    margin: 0.85mm 0 0;
+    color: #263b49;
+    font-size: 7.1pt;
+    line-height: 1.25;
+  }
+
+  .print-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2mm;
+  }
+
+  .print-skill-group {
+    padding: 2mm 2.5mm;
+    border-radius: 1.5mm;
+    border: 0.25mm solid var(--print-border);
+    background: #f3f8fc;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-skill-group h3 {
+    margin: 0;
+    color: var(--print-navy);
+    font-size: 7.9pt;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .print-skill-group p {
+    margin: 0.65mm 0 0;
+    color: var(--print-slate);
+    font-size: 7pt;
+    line-height: 1.24;
+  }
+
+  .print-languages {
+    margin-top: 4.8mm;
+  }
+
+  .print-languages h2 {
+    margin-bottom: 2.5mm;
+  }
+
+  .print-languages-grid {
+    border: 0.25mm solid var(--print-border);
+    border-radius: 1.5mm;
+    background: #f8fbfe;
+    padding: 1.6mm 2mm;
+    display: grid;
+    gap: 1.2mm;
+  }
+
+  .print-languages-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.4mm;
+  }
+
+  .print-languages-row p {
+    margin: 0;
+    color: #263b49;
+    font-size: 7.1pt;
+    line-height: 1.24;
+  }
+
+  .print-resume-footer {
+    margin: 3.2mm 0 0;
+    color: #94a3b8;
+    font-size: 6.4pt;
+    line-height: 1.15;
+  }
+}
