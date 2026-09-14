@@ -1,4 +1,4 @@
-import { ExternalLink, Mail, MapPin, Phone } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
 import { cvData } from '../data/cvData'
 
 function isPlaceholder(value: string) {
@@ -13,8 +13,6 @@ export function Contact() {
   const { contact, footer } = cvData
   const hasEmailLink = !isPlaceholder(contact.email) && contact.email.includes('@')
   const hasPhoneLink = !isPlaceholder(contact.phone) && /\d/.test(contact.phone)
-  const hasLinkedInLink =
-    !isPlaceholder(contact.linkedin) && (contact.linkedin.startsWith('http://') || contact.linkedin.startsWith('https://'))
 
   return (
     <>
@@ -53,23 +51,6 @@ export function Contact() {
                 </a>
               ) : (
                 <span className="contact-item__value">{contact.phone}</span>
-              )}
-            </p>
-
-            <p className="contact-item">
-              <ExternalLink size={17} aria-hidden="true" />
-              <span className="contact-item__label">LinkedIn</span>
-              {hasLinkedInLink ? (
-                <a
-                  className="contact-item__value"
-                  href={contact.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {contact.linkedin}
-                </a>
-              ) : (
-                <span className="contact-item__value">{contact.linkedin}</span>
               )}
             </p>
           </address>

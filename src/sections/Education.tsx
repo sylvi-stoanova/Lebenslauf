@@ -32,6 +32,22 @@ export function Education() {
           </article>
         ))}
       </div>
+
+      <section className="languages-block" aria-labelledby="weitere-stationen-title">
+        <h3 id="weitere-stationen-title">{cvData.additionalStations.title}</h3>
+        <div className="education-list" aria-label="Weitere Stationen in umgekehrter Chronologie">
+          {cvData.additionalStations.entries.map((entry) => (
+            <article key={`${entry.title}-${entry.period}`} className="education-entry is-compact">
+              <p className="education-entry__period">{entry.period}</p>
+
+              <div className="education-entry__content">
+                <h3>{entry.title}</h3>
+                <p className="education-entry__institution">{entry.institution}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
     </section>
   )
 }

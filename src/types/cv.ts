@@ -54,6 +54,17 @@ export type SkillGroup = {
   lines: string[]
 }
 
+export type AdditionalStationEntry = {
+  period: string
+  title: string
+  institution: string
+}
+
+export type AdditionalStationsData = {
+  title: string
+  entries: AdditionalStationEntry[]
+}
+
 export type LanguageEntry = {
   language: string
   level: string
@@ -72,7 +83,6 @@ export type ContactData = {
   location: string
   email: string
   phone: string
-  linkedin: string
 }
 
 export type FooterData = {
@@ -89,7 +99,7 @@ export type CvData = {
     profileText: string
     location: string
     emailLabel: string
-    linkedInLabel: string
+    phoneLabel: string
     photoPath: string
   }
   navigation: Array<{
@@ -100,6 +110,7 @@ export type CvData = {
   experiences: ExperienceEntry[]
   processFlow: ProcessFlowData
   education: EducationEntry[]
+  additionalStations: AdditionalStationsData
   skills: SkillsData
   contact: ContactData
   footer: FooterData

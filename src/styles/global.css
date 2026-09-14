@@ -806,6 +806,14 @@ button:focus-visible {
   margin-top: 0.5rem;
 }
 
+.education-section .languages-block .education-list .education-entry:last-child {
+  padding-bottom: 0.9rem;
+}
+
+.education-section .languages-block .education-list .education-entry:last-child .education-entry__content::before {
+  bottom: -0.95rem;
+}
+
 .it-skills-section {
   background: var(--white);
   border: 1px solid var(--border);

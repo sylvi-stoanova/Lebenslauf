@@ -1,3 +1,4 @@
+import { Mail, MapPin, Phone } from 'lucide-react'
 import { useState } from 'react'
 import { cvData } from '../data/cvData'
 
@@ -14,7 +15,6 @@ export function PrintHeader() {
   const showImage = Boolean(cvData.person.photoPath) && !imageMissing
   const email = toPrintToken(cvData.contact.email, '[E-Mail]')
   const phone = toPrintToken(cvData.contact.phone, '[Telefon]')
-  const linkedin = toPrintToken(cvData.contact.linkedin, '[LinkedIn]')
 
   return (
     <header className="print-header">
@@ -22,10 +22,22 @@ export function PrintHeader() {
         <h1>{cvData.person.fullName.toUpperCase()}</h1>
         <p className="print-header__title">{cvData.person.headline}</p>
         <p className="print-header__subtitle">{cvData.person.subline}</p>
-        <p className="print-header__contact">
-          {cvData.contact.location} · {email} · {phone} · {linkedin}
-        </p>
         <p className="print-header__profile">{cvData.person.profileText}</p>
+
+        <ul className="print-header__contact" aria-label="Kontaktinformationen">
+          <li>
+            <MapPin size={10} aria-hidden="true" />
+            <span>{cvData.contact.location}</span>
+          </li>
+          <li>
+            <Mail size={10} aria-hidden="true" />
+            <span>{email}</span>
+          </li>
+          <li>
+            <Phone size={10} aria-hidden="true" />
+            <span>{phone}</span>
+          </li>
+        </ul>
       </div>
 
       <figure className="print-header__photo" aria-label="Foto Bereich">

@@ -177,11 +177,32 @@
   }
 
   .print-header__contact {
+    list-style: none;
     margin: auto 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.9mm;
+    align-items: start;
+  }
+
+  .print-header__contact li {
+    display: grid;
+    grid-template-columns: 2.8mm minmax(0, 1fr);
+    align-items: start;
+    gap: 0.9mm;
     color: rgba(255, 255, 255, 0.85);
-    font-size: 7pt;
-    line-height: 1.17;
+    font-size: 7.6pt;
+    line-height: 1.26;
     overflow-wrap: anywhere;
+  }
+
+  .print-header__contact li svg {
+    color: rgba(255, 255, 255, 0.94);
+    width: 2.55mm;
+    height: 2.55mm;
+    margin-top: 0.35mm;
+    flex-shrink: 0;
   }
 
   .print-header__photo {
@@ -516,6 +537,36 @@
     color: var(--print-slate);
     font-size: 7pt;
     line-height: 1.24;
+  }
+
+  .print-education-secondary {
+    margin-top: 2.4mm;
+    border-top: 0.22mm solid var(--print-border);
+    padding-top: 2mm;
+  }
+
+  .print-education-secondary h3 {
+    margin: 0 0 1.5mm;
+    color: var(--print-navy);
+    font-size: 7.8pt;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15px;
+  }
+
+  .print-education-list--compact {
+    gap: 2.1mm;
+  }
+
+  .print-education-list--compact .print-education-entry__body h3 {
+    font-size: 7.7pt;
+  }
+
+  .print-education-list--compact .print-education-entry__institution {
+    margin-top: 0.55mm;
+    font-size: 6.9pt;
+    line-height: 1.18;
   }
 
   .print-languages {

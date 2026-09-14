@@ -1,4 +1,4 @@
-import { Link2, Mail, MapPin } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
 import { PhotoPlaceholder } from '../components/PhotoPlaceholder'
 import { cvData } from '../data/cvData'
 
@@ -10,7 +10,7 @@ export function Hero() {
         <p className="hero-headline">{cvData.person.headline}</p>
         <p className="hero-subline">{cvData.person.subline}</p>
         <p className="hero-print-contact" aria-label="Kontaktzeile Druckansicht">
-          {cvData.contact.location} · {cvData.contact.email} · {cvData.contact.phone} · {cvData.contact.linkedin}
+          {cvData.contact.location} · {cvData.contact.email} · {cvData.contact.phone}
         </p>
         <p className="hero-profile">{cvData.person.profileText}</p>
 
@@ -26,15 +26,15 @@ export function Hero() {
         <ul className="hero-meta" aria-label="Kontakt und Standort">
           <li>
             <MapPin size={16} aria-hidden="true" />
-            <span>{cvData.person.location}</span>
+            <span>{cvData.contact.location}</span>
           </li>
           <li>
             <Mail size={16} aria-hidden="true" />
-            <span>{cvData.person.emailLabel}</span>
+            <span>{cvData.contact.email}</span>
           </li>
           <li>
-            <Link2 size={16} aria-hidden="true" />
-            <span>{cvData.person.linkedInLabel}</span>
+            <Phone size={16} aria-hidden="true" />
+            <span>{cvData.contact.phone}</span>
           </li>
         </ul>
       </div>
