@@ -1,8 +1,8 @@
 import { Header } from './sections/Header'
 import { Hero } from './sections/Hero'
 import { Competencies } from './sections/Competencies'
+import { CareerJourney } from './sections/CareerJourney'
 import { Experience } from './sections/Experience'
-import { ProcessFlow } from './sections/ProcessFlow'
 import { Education } from './sections/Education'
 import { Skills } from './sections/Skills'
 import { Contact } from './sections/Contact'
@@ -16,8 +16,8 @@ function App() {
         <main id="main-content" className="main-content" aria-label="Lebenslauf Inhalte">
           <Hero />
           <Competencies />
+          <CareerJourney />
           <Experience />
-          <ProcessFlow />
           <Education />
           <Skills />
         </main>

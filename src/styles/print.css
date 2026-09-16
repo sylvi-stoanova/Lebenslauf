@@ -24,11 +24,11 @@
     --print-body-size: 9pt;
     --print-body-line: 1.25;
 
-    --print-section-gap: 5.4mm;
-    --print-heading-gap: 2.8mm;
+    --print-section-gap: 4.8mm;
+    --print-heading-gap: 2.4mm;
     --print-paragraph-gap: 1.1mm;
     --print-bullet-gap: 0.8mm;
-    --print-entry-gap: 3.7mm;
+    --print-entry-gap: 3.2mm;
   }
 
   html,
@@ -63,6 +63,10 @@
     display: none !important;
   }
 
+  .career-journey {
+    display: none !important;
+  }
+
   .print-resume {
     display: block !important;
     width: 190mm;
@@ -71,15 +75,6 @@
     font-family: Inter, Aptos, 'Segoe UI', Arial, sans-serif;
     font-size: 8.2pt;
     line-height: 1.25;
-  }
-
-  .print-page-break {
-    break-before: page;
-    page-break-before: always;
-  }
-
-  .print-page-break > .print-section:first-child {
-    margin-top: 0;
   }
 
   .print-section {
@@ -422,13 +417,13 @@
 
   .print-education-list {
     display: grid;
-    gap: 3.8mm;
+    gap: 3.2mm;
   }
 
   .print-education__container {
     border: 0.25mm solid var(--print-border);
     border-radius: 2mm;
-    padding: 3.5mm;
+    padding: 3mm;
     background: #ffffff;
   }
 
@@ -540,13 +535,13 @@
   }
 
   .print-education-secondary {
-    margin-top: 2.4mm;
+    margin-top: 2mm;
     border-top: 0.22mm solid var(--print-border);
-    padding-top: 2mm;
+    padding-top: 1.7mm;
   }
 
   .print-education-secondary h3 {
-    margin: 0 0 1.5mm;
+    margin: 0 0 1.2mm;
     color: var(--print-navy);
     font-size: 7.8pt;
     line-height: 1.2;
@@ -570,7 +565,7 @@
   }
 
   .print-languages {
-    margin-top: 4.8mm;
+    margin-top: 3.8mm;
   }
 
   .print-languages h2 {
@@ -600,7 +595,7 @@
   }
 
   .print-resume-footer {
-    margin: 3.2mm 0 0;
+    margin: 2.6mm 0 0;
     color: #94a3b8;
     font-size: 6.4pt;
     line-height: 1.15;

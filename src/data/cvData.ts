@@ -57,16 +57,51 @@ export const cvData: CvData = {
       ],
     },
     {
-      title: 'Digitalisierung & Automatisierung',
+      title: 'Digitalisierung & Prozessentwicklung',
       icon: 'workflow',
       lines: [
-        'Workflow-Automatisierung',
-        'AI-gestützte Prozesslösungen',
-        'Digitale Prozesskonzeption',
-        'API-basierte Integrationen',
-        'Automatisierungspotenziale',
-        'Umsetzung mit IT',
+        'Digitalisierungspotenziale erkennen',
+        'Fachliche Anforderungen strukturieren',
+        'Digitale Lösungskonzepte',
       ],
+    },
+  ],
+  careerJourney: [
+    {
+      id: 'operative-logistik',
+      number: '01',
+      title: 'Operative Logistik',
+      details: [
+        'Internationale Disposition',
+        'End-to-End-Transportsteuerung',
+        'Transportkalkulation & Frachtraumbeschaffung',
+      ],
+      reference: 'Sotraprint',
+      icon: 'truck',
+    },
+    {
+      id: 'business-kundenprozesse',
+      number: '02',
+      title: 'Business & Kundenprozesse',
+      details: ['Automotive / B2B', 'Internationale Kundenbetreuung', 'Angebots- & Prozesskoordination'],
+      reference: 'Gentner · Aptiv',
+      icon: 'users',
+    },
+    {
+      id: 'businessinformatik',
+      number: '03',
+      title: 'Businessinformatik',
+      details: ['Wirtschaft & IT', 'Informationssysteme', 'Digitale Geschäftsprozesse'],
+      reference: 'Bachelor Businessinformatik',
+      icon: 'graduation-cap',
+    },
+    {
+      id: 'prozessdigitalisierung',
+      number: '04',
+      title: 'Prozessdigitalisierung',
+      details: ['Prozessanalyse', 'Fachliche Anforderungen', 'Digitale Lösungskonzeption'],
+      reference: 'Polizeipräsidium Mittelfranken',
+      icon: 'workflow',
     },
   ],
   experiences: [
@@ -93,13 +128,27 @@ export const cvData: CvData = {
     },
     {
       organization: 'Baliu Trans',
-      period: '02/2021 – 06/2022',
+      period: '11/2021 – 06/2022',
       role: 'Speditionskauffrau – administrative Logistik',
       company: 'Baliu Trans, Schwarzenbruck',
       details: [
         'Administrative Begleitung von Transport- und Logistikprozessen im Umfeld der Zusammenarbeit mit DHL; operative Disposition durch DHL.',
         'Erfassung, Prüfung und Aufbereitung von Mitarbeiterstunden sowie Pflege und Kontrolle operativer Transportdaten.',
         'Kaufmännische Berechnungen, Berichte und administrative Auswertungen mit Microsoft Excel, Word und Outlook.',
+      ],
+    },
+    {
+      organization: 'Aptiv',
+      period: '02/2021 – 10/2021',
+      role: 'Sachbearbeiterin Customer Service',
+      company: 'Aptiv, Nürnberg',
+      contextLine: 'Einsatz über I. K. Hofmann Personal.',
+      details: [
+        'Betreuung internationaler Kunden im Customer Service.',
+        'Erstellung von Angeboten für Serviceanfragen und Ersatzteile.',
+        'Erstellung und Sicherstellung der Vollständigkeit von Serviceangebotskalkulationen.',
+        'Abstimmung von Terminen für Servicetätigkeiten mit Kunden.',
+        'Überwachung und Einhaltung vereinbarter Kundentermine.',
       ],
     },
     {
@@ -117,11 +166,10 @@ export const cvData: CvData = {
     },
     {
       organization: 'Sotraprint Spedition und Lagerlogistik GmbH',
-      period: '08/2015 – 02/2019',
+      period: '10/2015 – 02/2019',
       role: 'Kauffrau für Spedition und Logistikdienstleistung – Internationale Disposition',
       company: 'Sotraprint Spedition und Lagerlogistik GmbH, Wendelstein',
-      contextLine:
-        '10/2015–02/2018 Ausbildung; anschließend internationale Disposition. Vorpraktikum 08/2015–09/2015.',
+      contextLine: '10/2015–02/2018 Ausbildung; anschließend internationale Disposition.',
       highlights: ['bis zu ~100 Transporte / 2–3 Wochen', '~20 Schweiz-Verkehre / Woche'],
       details: [
         'Eigenverantwortliche End-to-End-Steuerung nationaler und internationaler Transporte – von Frachtraumbeschaffung und Kalkulation über Beauftragung und Terminsteuerung bis zu Kundenkommunikation und Problemlösung.',
@@ -131,6 +179,14 @@ export const cvData: CvData = {
         'Wirtschaftliche Transportkalkulation unter Einbezug von Hin-/Rücklauf und möglichen Leerfahrten; proaktive Termin- und Risikoplanung.',
         'Operative Lösungssteuerung bei Störungen, z. B. Umladung, Fahrerwechsel oder Doppelbesatzung; Auftragsbearbeitung im Komalog Transport Management System (TMS).',
       ],
+    },
+    {
+      organization: 'Sotraprint Spedition und Lagerlogistik GmbH',
+      period: '08/2015 – 10/2015',
+      role: 'Praktikum als Speditionskauffrau',
+      company: 'Sotraprint Spedition und Lagerlogistik GmbH, Wendelstein',
+      compact: true,
+      details: [],
     },
   ],
   processFlow: {
@@ -211,15 +267,7 @@ export const cvData: CvData = {
       {
         title: 'AI Agents & Workflow Automation',
         icon: 'workflow',
-        lines: [
-          'n8n',
-          'Docker – Grundkenntnisse',
-          'API-Integrationen',
-          'Triggers & Webhooks',
-          'LangChain Agents & Tools',
-          'Human-in-the-Loop',
-          'LangGraph / Multi-Agent Workflows',
-        ],
+        lines: ['n8n', 'LangChain Agents & Tools', 'Human-in-the-Loop'],
       },
       {
         title: 'Logistiksysteme & Microsoft',

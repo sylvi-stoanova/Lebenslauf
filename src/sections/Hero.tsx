@@ -9,6 +9,9 @@ export function Hero() {
         <h1 id="hero-title">{cvData.person.fullName.toUpperCase()}</h1>
         <p className="hero-headline">{cvData.person.headline}</p>
         <p className="hero-subline">{cvData.person.subline}</p>
+        <div className="hero-photo-mobile" aria-hidden="true">
+          <PhotoPlaceholder imageSrc={cvData.person.photoPath} alt={cvData.person.fullName} showImage={false} />
+        </div>
         <p className="hero-print-contact" aria-label="Kontaktzeile Druckansicht">
           {cvData.contact.location} · {cvData.contact.email} · {cvData.contact.phone}
         </p>
@@ -39,7 +42,9 @@ export function Hero() {
         </ul>
       </div>
 
-      <PhotoPlaceholder imageSrc={cvData.person.photoPath} alt={cvData.person.fullName} showImage={false} />
+      <div className="hero-photo-desktop">
+        <PhotoPlaceholder imageSrc={cvData.person.photoPath} alt={cvData.person.fullName} showImage={false} />
+      </div>
     </section>
   )
 }

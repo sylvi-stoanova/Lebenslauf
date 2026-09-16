@@ -31,6 +31,17 @@ export type ProcessFlowData = {
   steps: ProcessStep[]
 }
 
+export type CareerJourneyIconKey = 'truck' | 'users' | 'graduation-cap' | 'workflow'
+
+export type CareerJourneyEntry = {
+  id: string
+  number: string
+  title: string
+  details: string[]
+  reference: string
+  icon: CareerJourneyIconKey
+}
+
 export type EducationEntry = {
   period: string
   title: string
@@ -107,6 +118,7 @@ export type CvData = {
     label: string
   }>
   competencies: CompetencyCard[]
+  careerJourney: CareerJourneyEntry[]
   experiences: ExperienceEntry[]
   processFlow: ProcessFlowData
   education: EducationEntry[]
