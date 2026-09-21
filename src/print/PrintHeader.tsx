@@ -1,5 +1,4 @@
 import { Mail, MapPin, Phone } from 'lucide-react'
-import { useState } from 'react'
 import { cvData } from '../data/cvData'
 
 function toPrintToken(value: string, fallback: string) {
@@ -11,8 +10,6 @@ function toPrintToken(value: string, fallback: string) {
 }
 
 export function PrintHeader() {
-  const [imageMissing, setImageMissing] = useState(false)
-  const showImage = Boolean(cvData.person.photoPath) && !imageMissing
   const email = toPrintToken(cvData.contact.email, '[E-Mail]')
   const phone = toPrintToken(cvData.contact.phone, '[Telefon]')
 
@@ -41,18 +38,7 @@ export function PrintHeader() {
       </div>
 
       <figure className="print-header__photo" aria-label="Foto Bereich">
-        {showImage ? (
-          <img
-            src={cvData.person.photoPath}
-            alt={cvData.person.fullName}
-            onError={() => setImageMissing(true)}
-          />
-        ) : (
-          <div className="print-header__placeholder">
-            <p>Hier kommt dein Foto hin</p>
-            <small>3,5 × 4,5 cm</small>
-          </div>
-        )}
+        <img src={cvData.person.photoPath} alt="Sylvi Stoianova" />
       </figure>
     </header>
   )

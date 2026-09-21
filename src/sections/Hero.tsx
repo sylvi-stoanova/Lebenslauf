@@ -10,7 +10,7 @@ export function Hero() {
         <p className="hero-headline">{cvData.person.headline}</p>
         <p className="hero-subline">{cvData.person.subline}</p>
         <div className="hero-photo-mobile" aria-hidden="true">
-          <PhotoPlaceholder imageSrc={cvData.person.photoPath} alt={cvData.person.fullName} showImage={false} />
+          <PhotoPlaceholder imageSrc={cvData.person.photoPath} alt="Sylvi Stoianova" />
         </div>
         <p className="hero-print-contact" aria-label="Kontaktzeile Druckansicht">
           {cvData.contact.location} · {cvData.contact.email} · {cvData.contact.phone}
@@ -43,7 +43,7 @@ export function Hero() {
       </div>
 
       <div className="hero-photo-desktop">
-        <PhotoPlaceholder imageSrc={cvData.person.photoPath} alt={cvData.person.fullName} showImage={false} />
+        <PhotoPlaceholder imageSrc={cvData.person.photoPath} alt="Sylvi Stoianova" />
       </div>
     </section>
   )
