@@ -1,5 +1,6 @@
 import type { CvData } from '../types/cv'
 
+const profileImagePath = `${import.meta.env.BASE_URL}images/profile.jpg`
 export const cvData: CvData = {
   person: {
     fullName: 'Sylvi Stoanova',
@@ -11,7 +12,7 @@ export const cvData: CvData = {
     location: 'Galgengartenstr. 18, 91126 Schwabach',
     emailLabel: 'sylvi.stoanova@gmail.com',
     phoneLabel: '+49 157 33161038',
-    photoPath: '/images/profile.jpg',
+    photoPath: profileImagePath,
   },
   navigation: [
     { id: 'profil', label: 'Profil' },
